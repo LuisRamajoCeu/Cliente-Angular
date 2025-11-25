@@ -1,0 +1,18 @@
+<form class="container">
+    <input type="text" placeholder="Nombre" class="w-100">
+    <input type="number" placeholder="Precio" class="w-100">
+    <input type="number" placeholder="Unidades" class="w-100">
+    <button class="w-100" (click)="registrar($event)">Comprar</button>
+</form>
+<div>
+    <ul>
+      @for (a of articulos; let i = $index; track a){
+          <li class="fw-bold">
+            <p>{{ i + 1 }}</p>
+            <p>Nombre: {{ a.nombre }}</p>
+            <p>Precio: {{ a.precio }}€</p>
+            <p>Unidades: {{ a.unidades }}</p>
+          </li>
+      }
+    </ul>
+  </div>

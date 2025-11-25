@@ -1,12 +1,37 @@
 <h1>{{ title }}</h1>
-<form action="">
-  <input type="text"><br><br>
-  <input type="text"><br><br>
-  <button [class]="morado">Añadir</button>
-  @if ( true ){
-    <p [class]="morado">Alta</p>
+<form (ngSubmit)="agregarUsuario()">
+  <label for="nombre">Nombre: </label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required><br><br>
+  <label for="apellidos">Apellidos: </label>
+  <input type="text" id="apellidos" name="apellidos" [(ngModel)]="apellidos" required><br><br>
+  <button [class]="morado" type="submit">Añadir</button>
+  @if ( alta ){
+    <p [class]="morado">Alta correcta del usuario</p>
+    <p>{{nombre}}</p>
+    <p>{{apellidos}}</p>
   }@else {
-    <p [class]="morado">Sin Alta</p>
+    <p [class]="morado">Ninguna alta</p>
   }
+  <div>
+    <ul>
+      @for (p of personas; let i = $index; track p){
+        @if(p.edad >= 30){
+          <li class="fw-bold">
+            <p>{{ i + 1 }}</p>
+            <p>Nombre: {{ p.nombre }}</p>
+            <p>Apellidos: {{ p.apellidos }}</p>
+            <p>Edad: {{ p.edad }}</p>
+          </li>
+        }
+      }
+    </ul>
+  </div>
 </form>
+<form class="container">
+  <button value="A" (click)="marcar($event)" class="btn btn-primary btn-lg">A</button>
+  <button value="B" (click)="marcar($event)" class="btn btn-primary btn-md mx-3">B</button>
+  <button value="C" (click)="marcar($event)" class="btn btn-primary btn-sm">C</button>
+  <p>Has pulsado el botón: {{ opcion }}</p>
+</form>
+<app-articulo></app-articulo>
 <router-outlet />
