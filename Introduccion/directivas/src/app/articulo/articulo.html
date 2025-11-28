@@ -1,18 +1,24 @@
-<form class="container">
-    <input type="text" placeholder="Nombre" class="w-100">
-    <input type="number" placeholder="Precio" class="w-100">
-    <input type="number" placeholder="Unidades" class="w-100">
-    <button class="w-100" (click)="registrar($event)">Comprar</button>
-</form>
-<div>
+<h1>Lista de artículos</h1>
+<form class="row">
+  <div class="col-4">
+    <label for="nombre">Nombre: </label><br>
+    <input type="text" name="nombre" id="Nombre" [(ngModel)]="nombre" >
+  </div>
+  <div class="col-4">
+    <label for="precio">Precio: </label><br>
+    <input type="text" name="precio" id="Precio" [(ngModel)]="precio"/>
+  </div>
+  <div class="col-4">
+    <label for="unidades">Unidades: </label><br>
+    <input type="text" name="unidades" id="Unidades" [(ngModel)]="unidades"/>
+  </div>
+  <div class="text-center row mx-auto">
+    <input type="button" value="Comprar" (click)="comprar()" />
+  </div>
+  <div *ngFor="let art of articulos, let i = index">
     <ul>
-      @for (a of articulos; let i = $index; track a){
-          <li class="fw-bold">
-            <p>{{ i + 1 }}</p>
-            <p>Nombre: {{ a.nombre }}</p>
-            <p>Precio: {{ a.precio }}€</p>
-            <p>Unidades: {{ a.unidades }}</p>
-          </li>
-      }
+        <li>Id: {{i+1}} - Nombre: {{art.nombre}} - Precio: {{art.precio}}€ - Unidades: {{art.unidades}}</li>
     </ul>
   </div>
+</form>
+ 
