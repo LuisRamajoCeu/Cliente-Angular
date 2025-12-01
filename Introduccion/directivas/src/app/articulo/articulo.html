@@ -1,24 +1,36 @@
-<h1>Lista de artículos</h1>
-<form class="row">
-  <div class="col-4">
-    <label for="nombre">Nombre: </label><br>
-    <input type="text" name="nombre" id="Nombre" [(ngModel)]="nombre" >
+<div class="container p-4">
+  <h2>Formulario de Compra</h2>
+  
+  <!-- Formulario -->
+  <div class="card p-3 mb-4">
+    <div class="mb-3">
+      <label class="form-label">Nombre:</label>
+      <input type="text" class="form-control" 
+             [value]="nombre()" 
+             (input)="nombre.set($any($event.target).value)">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Precio:</label>
+      <input type="number" class="form-control" 
+             [value]="precio()" 
+             (input)="precio.set(+$any($event.target).value)">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Unidades:</label>
+      <input type="number" class="form-control" 
+             [value]="unidades()" 
+             (input)="unidades.set(+$any($event.target).value)">
+    </div>
+
+    <button class="btn btn-success" (click)="comprar()">Comprar</button>
   </div>
-  <div class="col-4">
-    <label for="precio">Precio: </label><br>
-    <input type="text" name="precio" id="Precio" [(ngModel)]="precio"/>
-  </div>
-  <div class="col-4">
-    <label for="unidades">Unidades: </label><br>
-    <input type="text" name="unidades" id="Unidades" [(ngModel)]="unidades"/>
-  </div>
-  <div class="text-center row mx-auto">
-    <input type="button" value="Comprar" (click)="comprar()" />
-  </div>
-  <div *ngFor="let art of articulos, let i = index">
-    <ul>
-        <li>Id: {{i+1}} - Nombre: {{art.nombre}} - Precio: {{art.precio}}€ - Unidades: {{art.unidades}}</li>
-    </ul>
-  </div>
-</form>
- 
+
+  <hr>
+
+  <!-- LLAMADA AL COMPONENTE HIJO -->
+  <!-- Pasamos el valor de la signal (listaArticulos()) a la propiedad 'articulos' del hijo -->
+  <app-listado-articulos [articulos]="listaArticulos()"></app-listado-articulos>
+
+</div>
