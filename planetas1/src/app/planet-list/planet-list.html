@@ -1,0 +1,8 @@
+<div class="container">
+  <h2 class="mt-3 mb-4">Lista de Planetas</h2>
+  <ul class="list-group">
+    <li class="list-group-item bg-info-subtle">@for (planeta of (planetsList$ | async).results; track $index) {
+      <hr><p>{{ $index + 1 }} {{ planeta.name.toUpperCase() }}</p> }<hr>
+    </li>
+  </ul>
+</div>
