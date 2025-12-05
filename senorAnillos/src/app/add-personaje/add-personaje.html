@@ -1,0 +1,16 @@
+<h4>Agregar Personaje</h4>
+<div>
+    <form>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="nuevoNombre"/>
+        </div>
+        <div class="mb-2">
+            <label for="raza" class="form-label">Raza</label>
+            <input type="text" name="raza" id="raza" class="form-control" [(ngModel)]="nuevaRaza"/>
+        </div>
+        <div>
+            <button type="submit" class="rounded p-2 bg-success text-white" (click)="agregarPersonaje(nuevoNombre,nuevaRaza)">Agregar personaje</button>
+        </div>
+    </form>
+</div>
