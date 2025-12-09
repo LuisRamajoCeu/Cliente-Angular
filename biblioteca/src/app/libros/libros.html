@@ -1,0 +1,6 @@
+<h3 class="text-center">Libros de la biblioteca</h3>
+<ul class="list-group">
+    <li class="list-group-item bg-info-subtle">@for (l of listaLibros; track $index) {
+      <hr><a [routerLink]="['/libros',l.id]" [queryParams]="{ titulo: l.titulo, autor: l.autor }">{{ l.id }}-{{ l.titulo }}</a>}<hr>
+    </li>
+</ul>
