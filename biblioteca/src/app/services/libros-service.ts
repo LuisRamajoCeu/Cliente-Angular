@@ -30,4 +30,17 @@ export class LibrosService {
   getLibroPorId(id:number):Libro{
     return this.libros[id - 1];
   }
+  altaLibro(nuevoLibro:Libro){
+    nuevoLibro.id = this.libros.length + 1;
+    this.libros.push(nuevoLibro);
+  }
+  actualizar(libroActualizar:Libro){
+    for(let l of this.libros){
+      if(l.id == libroActualizar.id){
+        l.titulo = libroActualizar.titulo;
+        l.autor = libroActualizar.autor;
+        break;
+      }
+    }
+  }
 }

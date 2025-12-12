@@ -1,0 +1,13 @@
+<div>
+    <h3>Crea un nuevo libro</h3>
+    <form>
+        <label for="titulo">Titulo: </label>
+        <input type="text" id="titulo" name="titulo" [(ngModel)]="libro.titulo"><br><br>
+        <label for="autor">Autor: </label>
+        <input type="text" id="autor" name="autor" [(ngModel)]="libro.autor"><br><br>
+        <button (click)="altaLibro()">Alta de libro</button>
+        <button [routerLink]="['/libros']">Atrás</button>
+    </form>
+
+</div>
+    

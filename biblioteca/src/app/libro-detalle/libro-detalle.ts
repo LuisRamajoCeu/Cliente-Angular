@@ -15,7 +15,7 @@ export class LibroDetalle {
   libro : Libro = { id: 0, titulo: '', autor: '' }
   ngOnInit():void{
     const idBuscar = this.act.snapshot.params['id'];
+    this.libro = this.librosService.getLibroPorId(idBuscar);
   }
-  this.libro = this.librosService.getLibroPorId(idBuscar);
 
 }

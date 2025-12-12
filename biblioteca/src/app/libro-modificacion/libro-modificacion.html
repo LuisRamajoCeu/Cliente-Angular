@@ -1,0 +1,9 @@
+<h3>Modificar libro</h3>
+<form>
+    <label for="titulo">Titulo: </label>
+    <input id="titulo" name="titulo" [(ngModel)]="libro.titulo"><br><br>
+    <label for="autor">Autor: </label>
+    <input id="autor" name="autor" [(ngModel)]="libro.autor"><br><br>
+    <button (click)="guardar()">Guardar cambios</button>
+    <button [routerLink]="['/libros']">Atrás</button>
+</form>
