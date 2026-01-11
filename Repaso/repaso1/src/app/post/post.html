@@ -1,1 +1,18 @@
-<p>post works!</p>
+<h1>POSTS</h1>
+<button (click)="cargarPosts()">Cargar Posts</button>
+
+<table>
+  <thead>
+    <tr><th>Título</th><th>Body</th></tr>
+  </thead>
+  <tbody>
+    @for (post of posts$ | async; track post.id) {
+      <tr>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+      </tr>
+    } @empty {
+      <tr><td colspan="2">No hay datos (o no has pulsado el botón)</td></tr>
+    }
+  </tbody>
+</table>
