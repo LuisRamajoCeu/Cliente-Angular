@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 export class Post {
 
   constructor(private service:Repaso1Service) { }
-  posts$: Observable<Posts[]>;
+  posts$!: Observable<Posts[]>;
 
 
   cargarPosts() {
