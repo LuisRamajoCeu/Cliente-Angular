@@ -1,18 +1,25 @@
-<h1>POSTS</h1>
-<button (click)="cargarPosts()">Cargar Posts</button>
+<div class="container">
+  <h1>POSTS</h1>
+  <button (click)="cargarPosts()">Cargar datos</button>
 
-<table>
-  <thead>
-    <tr><th>Título</th><th>Body</th></tr>
-  </thead>
-  <tbody>
-    @for (post of posts$ | async; track post.id) {
+  <table>
+    <thead>
       <tr>
-        <td>{{ post.title }}</td>
-        <td>{{ post.body }}</td>
+        <th>Title</th>
+        <th>Body</th>
       </tr>
-    } @empty {
-      <tr><td colspan="2">No hay datos (o no has pulsado el botón)</td></tr>
-    }
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      @if (posts$ | async; as lista) {
+        @for (item of lista; track item.id) {
+          <tr>
+            <td>{{ item.title }}</td>
+            <td>{{ item.body }}</td>
+          </tr>
+        } @empty {
+          <tr><td colspan="2">No hay datos cargados.</td></tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>
