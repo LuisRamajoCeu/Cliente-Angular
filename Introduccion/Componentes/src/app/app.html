@@ -1,0 +1,9 @@
+
+<router-outlet />
+<h3>{{ nombre }} {{ nota }}</h3>
+Nombre: <input type="text" [(ngModel)]="nombreInput">
+Nota: <input type="text" [(ngModel)]="notaInput">
+<button (click)="cambiarNombre()">Cambiar nombre</button>
+<button (click)="cambiarNota()">Cambiar nota</button>
+<app-hijo [nombre]="nombre" [nota]="nota" (nombreDeHijo)="cambiarNombreDesdeHijo($event)"
+(notaDeHijo)="cambiarNotaeDesdeHijo($event)" ></app-hijo>

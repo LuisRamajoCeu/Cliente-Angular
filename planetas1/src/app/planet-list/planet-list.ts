@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlanetsList } from '../model/planet';
 import { Planetas } from '../services/planetas-service';
 import { Observable } from 'rxjs';
@@ -10,7 +10,7 @@ import { AsyncPipe } from '@angular/common';
   templateUrl: './planet-list.html',
   styleUrl: './planet-list.css',
 })
-export class PlanetList {
+export class PlanetList implements OnInit {
   planetsList$ = new Observable<PlanetsList>();
   constructor(private planetas: Planetas){}
   ngOnInit(): void {

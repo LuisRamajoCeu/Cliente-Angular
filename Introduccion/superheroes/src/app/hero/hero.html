@@ -1,7 +1,7 @@
 <h1 style="color: orange;text-align: center;">Superheroes</h1>
 <p class="text-center">Nombre: {{ nombre }}</p>
 <p class="text-center">Edad: {{ edad }}</p>
-<p class="text-center">Nombre en mayúsculas: {{ nombre.toUpperCase() }}</p>
+<p class="text-center">Nombre en mayúsculas: {{ nombre | uppercase }} </p>
 <p class="text-center">Concatenación: {{nombre}}{{edad}}</p>
 <div class="container row mx-auto">
     <div class="col-6 "><button class="w-100 bg-warning" id="edadA18" (click)="edadA18()">Poner edad a 18</button></div>

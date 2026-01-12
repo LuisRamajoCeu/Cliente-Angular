@@ -1,4 +1,9 @@
-<p>list works!</p>
-@if(heroeBorrado != null){
+@for (heroe of heroes; track $index) {
+    <li>{{ heroe }}</li>
+}
+<button (click)="borrarUltimoHeroe()">Borrar ultimo heroe</button>
+@if (heroes.length == 4) {
+    <p>No se ha borrado nada</p>
+}@else {
     <p>El heroe borrado fue: {{heroeBorrado}}</p>
 }
