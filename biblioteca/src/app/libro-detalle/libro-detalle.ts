@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Libro } from '../model/Libro';
 import { LibrosService } from '../services/libros-service';
 
 @Component({
   selector: 'app-libro-detalle',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './libro-detalle.html',
   styleUrl: './libro-detalle.css',
 })

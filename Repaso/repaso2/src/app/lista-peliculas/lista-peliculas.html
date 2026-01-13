@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Lista Peliculas</h1>
+@if (listaPeliculas$ | async; as lista) {
+<table style="border: 1px solid; border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid;">ID</th>
+            <th style="border: 1px solid;">Titulo</th>
+            <th style="border: 1px solid;">Modificar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (p of lista.peliculas; track p.id){
+            <tr>
+                <td style="border: 1px solid;">{{p.id}}</td>
+                <td style="border: 1px solid;"><a (click)="seleccionarPelicula(p)">{{p.titulo}}</a></td>
+                <td style="border: 1px solid;"><button [routerLink]="['/modificar',p.id]">Modificar película</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+<hr>
+<app-detalle [pelicula]="pSeleccionada"></app-detalle>

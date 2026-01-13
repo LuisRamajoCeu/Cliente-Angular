@@ -1,0 +1,8 @@
+@if (pelicula) {
+    <h2>Actores de {{pelicula.titulo}}</h2>
+    <ul>
+        @for (item of pelicula.actores; track $index) {
+            <li>{{item.nombre}} {{item.edad}} {{item.genero}}</li>
+        }
+    </ul>
+}

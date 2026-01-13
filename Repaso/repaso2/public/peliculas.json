@@ -1,0 +1,54 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "El Señor de los Anillos",
+      "actores": [
+        { "nombre": "Elijah Wood", "genero": "hombre", "edad": 42 },
+        { "nombre": "Ian McKellen", "genero": "hombre", "edad": 84 },
+        { "nombre": "Viggo Mortensen", "genero": "hombre", "edad": 65 },
+        { "nombre": "Cate Blanchett", "genero": "mujer", "edad": 54 }
+      ]
+    },
+    {
+      "id": 2,
+      "titulo": "Inception",
+      "actores": [
+        { "nombre": "Leonardo DiCaprio", "genero": "hombre", "edad": 49 },
+        { "nombre": "Cillian Murphy", "genero": "hombre", "edad": 47 },
+        { "nombre": "Elliot Page", "genero": "hombre", "edad": 36 },
+        { "nombre": "Marion Cotillard", "genero": "mujer", "edad": 48 }
+      ]
+    },
+    {
+      "id": 3,
+      "titulo": "Barbie",
+      "actores": [
+        { "nombre": "Margot Robbie", "genero": "mujer", "edad": 33 },
+        { "nombre": "Ryan Gosling", "genero": "hombre", "edad": 43 },
+        { "nombre": "America Ferrera", "genero": "mujer", "edad": 39 },
+        { "nombre": "Will Ferrell", "genero": "hombre", "edad": 56 }
+      ]
+    },
+    {
+      "id": 4,
+      "titulo": "Interstellar",
+      "actores": [
+        { "nombre": "Matthew McConaughey", "genero": "hombre", "edad": 54 },
+        { "nombre": "Anne Hathaway", "genero": "mujer", "edad": 41 },
+        { "nombre": "Jessica Chastain", "genero": "mujer", "edad": 46 },
+        { "nombre": "Michael Caine", "genero": "hombre", "edad": 90 }
+      ]
+    },
+    {
+      "id": 5,
+      "titulo": "The Matrix",
+      "actores": [
+        { "nombre": "Keanu Reeves", "genero": "hombre", "edad": 59 },
+        { "nombre": "Laurence Fishburne", "genero": "hombre", "edad": 62 },
+        { "nombre": "Carrie-Anne Moss", "genero": "mujer", "edad": 56 },
+        { "nombre": "Hugo Weaving", "genero": "hombre", "edad": 63 }
+      ]
+    }
+  ]
+}

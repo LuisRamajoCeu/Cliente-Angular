@@ -1,0 +1,35 @@
+<h1>Modificar Película</h1>
+
+  <div>
+    <label>Título de la película:</label><br>
+    <input type="text" [(ngModel)]="pelicula.titulo" style="width: 300px;">
+  </div>
+
+  <hr>
+  <h3>Editar Actores</h3>
+
+  @for (actor of pelicula.actores; track $index) {
+    <div style="margin-bottom: 10px; border: 1px solid #ddd; padding: 10px;">
+      
+      <p><strong>Actor {{ $index + 1 }}</strong></p>
+
+      <label>Nombre: </label>
+      <input type="text" [(ngModel)]="actor.nombre">
+
+      <label> Edad: </label>
+      <input type="number" [(ngModel)]="actor.edad">
+
+      <label> Sexo: </label>
+      <select [(ngModel)]="actor.genero">
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+      </select>
+
+    </div>
+  }
+
+  <hr>
+  
+  <button (click)="guardar()" style="padding: 10px 20px; background: green; color: white;">
+    Modificar y Volver
+  </button>
